@@ -15,13 +15,9 @@ export const SliderItem = ({ name }: Props) => {
     <div className={cls.container}>
       <SliderItemTimer />
 
-      <Image
-        src={`/slider-${randomImage}.webp`}
-        alt={name}
-        width={253}
-        height={253}
-        className={cls.img}
-      />
+      <div className={cls.img}>
+        <Image src={`/slider-${randomImage}.webp`} alt={name} fill />
+      </div>
 
       <div className={cls.name}>{name}</div>
 

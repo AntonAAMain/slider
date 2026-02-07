@@ -12,6 +12,12 @@
   gap: 5px;
   border-radius: 10px;
   z-index: 1;
+
+  @media screen and (max-width: 1500px) {
+    right: 23px;
+    top: 20px;
+    padding: 7px 10px;
+  }
 }
 
 .number {
@@ -20,4 +26,8 @@
   line-height: 100%;
   color: white;
   letter-spacing: 0;
+
+  @media screen and (max-width: 1500px) {
+    font-size: 10px;
+  }
 }

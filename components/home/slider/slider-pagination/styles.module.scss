@@ -10,6 +10,11 @@
   align-items: center;
   position: relative;
   box-shadow: 0px 43px 34px -25.87px rgba(15, 15, 15, 0.12);
+
+  @media screen and (max-width: 1500px) {
+    width: 124px;
+    height: 48px;
+  }
 }
 
 .btn {
@@ -21,6 +26,20 @@
   align-items: center;
   margin-right: 24px;
   cursor: pointer;
+
+  @media screen and (max-width: 1500px) {
+    margin-right: 13px;
+  }
+}
+
+.arrow {
+  width: 14px;
+  height: 9px;
+
+  @media screen and (max-width: 1500px) {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .reversedBtn {
@@ -28,6 +47,10 @@
   transform: rotate(180deg);
   cursor: pointer;
   margin-right: unset;
+
+  @media screen and (max-width: 1500px) {
+    margin-left: 16px;
+  }
 }
 
 .border {

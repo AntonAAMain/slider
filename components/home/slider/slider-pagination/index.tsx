@@ -11,13 +11,13 @@ export const SliderPagination = ({ next, prev }: Props) => {
   return (
     <div className={cls.container}>
       <button onClick={prev} className={cls.btn}>
-        <Image alt="" src={"/arrow.svg"} width={14} height={9} />
+        <img className={cls.arrow} src="/arrow.svg" alt="" />
       </button>
 
       <div className={cls.border}></div>
 
       <button onClick={next} className={cn(cls.btn, cls.reversedBtn)}>
-        <Image alt="" src={"/arrow.svg"} width={14} height={9} />
+        <img className={cls.arrow} src="/arrow.svg" alt="" />
       </button>
     </div>
   );

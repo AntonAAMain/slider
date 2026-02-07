@@ -26,25 +26,25 @@ export const fetchNftList = createAsyncThunk<NftItem[]>(
   "slider/fetchNftList",
   async (_, { rejectWithValue }) => {
     try {
-      // const res = await fetch(NFT_LIST_URL);
-      // if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      // const data = await res.json();
-      // return data;
-      return [
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-        { name: "asd", id: "123" },
-      ];
+      const res = await fetch(NFT_LIST_URL);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      return data;
+      // return [
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      //   { name: "asd", id: "123" },
+      // ];
     } catch (e) {
       const message = e instanceof Error ? e.message : "Failed to fetch NFTs";
       return rejectWithValue(message);

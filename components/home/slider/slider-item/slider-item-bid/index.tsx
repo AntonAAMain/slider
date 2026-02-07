@@ -14,13 +14,9 @@ export const SliderItemBid = () => {
         <div className={cls.name}>Current bid</div>
 
         <div className={cls.value}>
-          <Image
-            width={12}
-            height={18}
-            style={{ marginLeft: "5px" }}
-            src={"/bid.svg"}
-            alt=""
-          />
+          <div className={cls.bid}>
+            <Image fill style={{ marginLeft: "5px" }} src={"/bid.svg"} alt="" />
+          </div>
 
           <p>{bid}</p>
         </div>
