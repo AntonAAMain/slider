@@ -1,0 +1,23 @@
+.container {
+  position: absolute;
+  top: 28px;
+  right: 25px;
+  background: rgba(28, 29, 32, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 10px 14px;
+  flex-direction: row;
+  gap: 5px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.number {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: white;
+  letter-spacing: 0;
+}

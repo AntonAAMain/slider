@@ -1,8 +1,8 @@
 import { fetchNftList, useAppDispatch, useAppSelector } from "@/shared/redux";
 import React from "react";
 
-export const SLIDE_WIDTH = 100;
-export const GAP = 12;
+export const SLIDE_WIDTH = 281;
+export const GAP = 40;
 
 export const useSlider = () => {
   const [current, setCurrent] = React.useState(0);
@@ -16,7 +16,7 @@ export const useSlider = () => {
     dispatch(fetchNftList());
   }, [dispatch]);
 
-  const { list } = useAppSelector((state) => state.slider);
+  const { list, loading, error } = useAppSelector((state) => state.slider);
 
   React.useEffect(() => {
     const update = () => {
@@ -29,14 +29,17 @@ export const useSlider = () => {
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  const infiniteSlides = [...list.slice(0, 40)];
-  const centerStart = list.length;
+  const slidesLength = list.length;
+  const infiniteSlides =
+    slidesLength > 0 ? [...list, ...list, ...list] : [];
+  const centerStart = slidesLength;
 
   const next = () => {
+    if (!slidesLength) return;
     setNoTransition(false);
-    const nextVal = (current + 1) % list.length;
-    if (current === list.length - 1) {
-      setCurrent(list.length);
+    const nextVal = (current + 1) % slidesLength;
+    if (current === slidesLength - 1) {
+      setCurrent(slidesLength);
       setTimeout(() => {
         setNoTransition(true);
         setCurrent(0);
@@ -48,12 +51,13 @@ export const useSlider = () => {
   };
 
   const prev = () => {
+    if (!slidesLength) return;
     setNoTransition(false);
     if (current === 0) {
       setCurrent(-1);
       setTimeout(() => {
         setNoTransition(true);
-        setCurrent(list.length - 1);
+        setCurrent(slidesLength - 1);
         requestAnimationFrame(() => setNoTransition(false));
       }, 300);
     } else {
@@ -63,9 +67,13 @@ export const useSlider = () => {
 
   const displayIndex = centerStart + current;
   const offset =
-    displayIndex * (SLIDE_WIDTH + GAP) + SLIDE_WIDTH / 2 - containerWidth / 2;
+    slidesLength > 0
+      ? displayIndex * (SLIDE_WIDTH + GAP) + SLIDE_WIDTH / 2 - containerWidth / 2
+      : 0;
   const totalWidth =
-    infiniteSlides.length * SLIDE_WIDTH + (infiniteSlides.length - 1) * GAP;
+    infiniteSlides.length > 0
+      ? infiniteSlides.length * SLIDE_WIDTH + (infiniteSlides.length - 1) * GAP
+      : 0;
 
   return {
     current,
@@ -79,5 +87,7 @@ export const useSlider = () => {
     displayIndex,
     next,
     prev,
+    loading,
+    error,
   };
 };
