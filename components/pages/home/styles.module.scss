@@ -1,7 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background: rgba(241, 241, 241, 1);
   height: max-content;
+
+  overflow-x: hidden;
+
+  // border: 30px solid green;
+  height: 100vh;
 }
