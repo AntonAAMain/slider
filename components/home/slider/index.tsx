@@ -16,8 +16,11 @@ export const Slider = () => {
   } = useSlider();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-zinc-100 gap-6">
-      <div className="w-full flex flex-col items-center gap-6 px-4">
+    <div className="flex flex-col items-center justify-center p-4  gap-62">
+      <div
+        className="w-full flex flex-col items-center px-4"
+        style={{ gap: 70 }}
+      >
         <div ref={containerRef} className="w-full overflow-hidden">
           <div
             className="flex"

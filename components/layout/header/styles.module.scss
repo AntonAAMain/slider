@@ -1,0 +1,33 @@
+.container {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 145px;
+}
+
+.content {
+  width: 1440px;
+  display: flex;
+  flex-direction: row;
+  gap: 66px;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  color: rgba(96, 96, 96, 1);
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  list-style-type: none;
+  line-height: 26px;
+  letter-spacing: 0%;
+}
