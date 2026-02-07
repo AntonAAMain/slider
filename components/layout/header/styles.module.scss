@@ -16,6 +16,17 @@
   flex-direction: row;
   gap: 66px;
   align-items: center;
+
+  @media screen and (max-width: 1500px) {
+    width: 1024px;
+    gap: 40px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 90vw;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
 }
 
 .nav {
@@ -30,4 +41,35 @@
   list-style-type: none;
   line-height: 26px;
   letter-spacing: 0%;
+
+  @media screen and (max-width: 1024px) {
+    // height: calc(100vh - 345px);
+    position: fixed;
+    width: 100vw;
+    top: 115px;
+    background: white;
+    left: 0;
+    height: 100vh;
+    z-index: 5;
+    font-size: 40px;
+    line-height: 42px;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 30px;
+    align-items: flex-start;
+  }
+}
+
+.logoName {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
 }
